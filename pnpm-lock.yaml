@@ -61,6 +61,9 @@ devDependencies:
   jest:
     specifier: ^29.7.0
     version: registry.npmmirror.com/jest@29.7.0
+  jest-cli:
+    specifier: ^29.7.0
+    version: registry.npmmirror.com/jest-cli@29.7.0
   jest-environment-jsdom:
     specifier: ^29.7.0
     version: registry.npmmirror.com/jest-environment-jsdom@29.7.0

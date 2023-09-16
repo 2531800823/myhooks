@@ -14,4 +14,6 @@ test("loads and displays greeting", async () => {
   fireEvent.click(div as HTMLDivElement);
   //   判断点击后 值
   expect(count.textContent).toBe("1");
+
+  expect(1).toBe(1);
 });
