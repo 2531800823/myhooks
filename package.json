@@ -11,6 +11,7 @@
     "tt": "jest --testPathPattern $npm_config_arg1"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

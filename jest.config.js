@@ -10,6 +10,7 @@ export default {
     "^.+\\.svg$": "jest-svg-transformer",
     "^@/(.*)$": "<rootDir>/src/$1",
     "^.+\\.(css|less|scss)$": "identity-obj-proxy",
+    "^lodash-es$": "lodash",
   },
 
   setupFilesAfterEnv: ["./test/jest-setup.ts"],
