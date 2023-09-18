@@ -3,7 +3,7 @@ export const isObject = (value: unknown): value is Record<any, any> =>
   value !== null && typeof value === "object";
 
 /** 判断 是否是一个 函数 */
-export const isFunction = (value: unknown): value is (...ages: any) => any =>
+export const isFunction = (value: unknown): value is (...args: any) => any =>
   typeof value === "function";
 
 /** 判断 是否是一个 字符串 */
