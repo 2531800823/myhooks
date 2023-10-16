@@ -1,18 +1,13 @@
 import useMemoizedFn from "@/useMemoizedFn";
 import { useCallback, useEffect, useRef } from "react";
 import { isNumber } from "../utils/index";
-
-function useInterval(
-  fn: () => void,
-  delay?: number,
-  options?: { immediate: boolean }
-) {
+function useTimeout(fn: () => void, delay?: number) {
   const timerCallback = useMemoizedFn(fn);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const clear = useCallback(() => {
     if (timerRef.current) {
-      clearInterval(timerRef.current);
+      clearTimeout(timerRef.current);
     }
   }, []);
 
@@ -20,14 +15,13 @@ function useInterval(
     if (!isNumber(delay) || delay < 0) {
       return;
     }
-    if (options?.immediate) {
-      timerCallback();
-    }
-    timerRef.current = setInterval(timerCallback, delay);
+
+    timerRef.current = setTimeout(timerCallback, delay);
 
     return clear;
-  }, [delay, options?.immediate]);
+  }, [delay]);
+
   return clear;
 }
 
-export default useInterval;
+export default useTimeout;
