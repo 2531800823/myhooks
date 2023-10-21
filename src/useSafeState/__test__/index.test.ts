@@ -1,7 +1,7 @@
 import { act, renderHook } from "@testing-library/react";
 import useSafeState from "..";
 describe("useSafeState", () => {
-  const setUp = (initialValue: any) =>
+  const setUp = <S>(initialValue: S) =>
     renderHook(() => {
       const [state, setState] = useSafeState(initialValue);
 
@@ -54,7 +54,7 @@ describe("useSafeState", () => {
     expect(hook.result.current.state).toEqual({ hello: "world" });
 
     act(() => {
-      hook.result.current.setState((prev: any) => {
+      hook.result.current.setState((prev) => {
         return { ...prev, world: "hello" };
       });
     });
